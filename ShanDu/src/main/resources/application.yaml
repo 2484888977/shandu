@@ -1,0 +1,21 @@
+server:
+  port: 8090
+
+mybatis:
+  # mapper-locations 确认所有的mapper层的xml文件的路径位置
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  # 确认返回参数和传入参数的自定义的实体类的位一般从主包名开始写
+  type-aliases-package: com.shandu.pojo
+
+spring:
+  application:
+    name:exam-provider-basic
+  datasource:
+    # mysql 8.0以上版本的写法，8.0一下的   com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    # 连接数据库的地址，写法为：jdbc:mysql://localhost:3306/数据库名?属性
+    url: jdbc:mysql://localhost:3307/shandu?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
+#    url: jdbc:mysql://localhost:3306/test?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+

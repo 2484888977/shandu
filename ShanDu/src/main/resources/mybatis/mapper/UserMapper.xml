@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shandu.mapper.UserMapper">
+    <!--    管理员登录-->
+    <select id="login" resultType="com.shandu.pojo.Admin">
+        select *
+        from shandu.admin
+        where username = #{username}
+          and password = #{password}
+    </select>
+    <!--    //     添加用户-->
+    <insert id="addUser" parameterType="com.shandu.pojo.User">
+        insert into shandu.user(name, vx_id, vx_head, introduce, sex, birthday, notenber, collecnber)
+        values (#{name}, #{vx_id}, #{vx_head}, #{introduce}, #{sex}, #{birthday}, 0, 0)
+    </insert>
+    <!--    //    通过vx_id查询用户-->
+    <select id="selectUserVx" resultType="com.shandu.pojo.User">
+        select *
+        from shandu.user
+        where vx_id = #{vx_id}
+    </select>
+    <!--查询用户-->
+    <select id="selectUser" resultType="com.shandu.pojo.User">
+        select *
+        from shandu.user
+        <where>
+            <if test="true">
+                u_id != 0
+            </if>
+            <if test="keyword != null">
+                and concat_ws(" ", name) regexp #{keyword}
+            </if>
+        </where>
+        limit #{page},#{limit}
+    </select>
+    <!--    更改用户-->
+    <update id="updateUser" parameterType="com.shandu.pojo.User">
+        update shandu.user
+        set name      = #{name},
+            sex       = #{sex},
+            birthday  = #{birthday},
+            introduce = #{introduce},
+            vx_head   = #{vx_head}
+        where u_id = #{u_id}
+    </update>
+    <!--    删除用户-->
+    <delete id="deleteUser" parameterType="com.shandu.pojo.User">
+        delete
+        from shandu.user
+        where u_id = #{u_id}
+    </delete>
+
+</mapper>

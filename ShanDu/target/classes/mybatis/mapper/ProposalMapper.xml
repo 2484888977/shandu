@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shandu.mapper.ProposalMapper">
+<!--    添加建议-->
+    <insert id="addProposal" parameterType="com.shandu.pojo.Proposal">
+        insert into shandu.proposal(u_id, name, proposal)
+        values (#{u_id}, #{name}, #{proposal})
+    </insert>
+<!--    查询建议-->
+    <select id="selectProposal" resultType="com.shandu.pojo.Proposal">
+        select *
+        from shandu.proposal
+        <where>
+            <if test="keyword!= null">
+                and concat_ws(" ", name) regexp #{keyword}
+            </if>
+        </where>
+        limit #{page},#{limit}
+    </select>
+</mapper>

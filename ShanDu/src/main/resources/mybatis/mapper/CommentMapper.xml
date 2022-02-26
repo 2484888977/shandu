@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shandu.mapper.CommentMapper">
+    <!--    作者id查询评论-->
+    <select id="selectComment01" resultType="com.shandu.pojo.Comment_View">
+        select *
+        from shandu.comment_view
+        where userid = #{userid}
+          and code = #{code}
+    </select>
+    <!--    笔记id查询评论/通知-->
+    <select id="selectComment02" resultType="com.shandu.pojo.Comment_View">
+        select *
+        from shandu.comment_view
+        where note_id = #{note_id}
+          and code = #{code}
+    </select>
+    <!--    添加评论-->
+    <insert id="addComment" parameterType="com.shandu.pojo.Comment">
+        insert into shandu.comment(note_id, u_id, content, datatime, collecnum, code)
+        values (#{note_id}, #{u_id}, #{content}, #{datatime}, #{collecnum}, #{code})
+    </insert>
+    <!--    评论id查询评论-->
+    <select id="selectComment03" resultType="com.shandu.pojo.Comment_View">
+        select *
+        from shandu.Comment_View
+        where commentid = #{commentid}
+    </select>
+    <!--    修改评论-->
+    <update id="updateComment" parameterType="com.shandu.pojo.Comment">
+        update shandu.comment
+        set content = #{content}
+        where commentid = #{commentid}
+    </update>
+    <!--删除评论-->
+    <delete id="deleteComment" parameterType="com.shandu.pojo.Comment">
+        delete
+        from shandu.comment
+        where commentid = #{commentid}
+    </delete>
+    <select id="selectComment" resultType="com.shandu.pojo.Comment_View">
+            select *
+            from shandu.comment_view
+            <where>
+                <if test="true">
+                    code != 0
+                </if>
+                <if test="keyword!= null">
+                    and concat_ws(" ", name,content,title) regexp #{keyword}
+                </if>
+            </where>
+            limit #{page},#{limit}
+    </select>
+</mapper>

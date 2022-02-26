@@ -1,0 +1,1426 @@
+
+[[_paths]]
+== Paths
+
+[[_addcommentusingget]]
+=== 添加评论
+....
+GET /CommentController/addComment
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**code** +
+__required__|添加评论填1|integer (int32)
+|**Query**|**collecnum** +
+__optional__||integer (int32)
+|**Query**|**commentid** +
+__optional__||integer (int32)
+|**Query**|**content** +
+__required__|评论内容|string
+|**Query**|**datatime** +
+__optional__||string
+|**Query**|**note_id** +
+__required__|笔记id|integer (int32)
+|**Query**|**u_id** +
+__required__|用户id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 评论相关接口
+
+
+[[_deletecommentusingget]]
+=== deleteComment
+....
+GET /CommentController/deleteComment
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**commentid** +
+__optional__|commentid|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 评论相关接口
+
+
+[[_selectcommentusingget]]
+=== selectComment
+....
+GET /CommentController/selectComment
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**keyword** +
+__optional__|keyword|string
+|**Query**|**limit** +
+__optional__|limit|integer (int32)
+|**Query**|**page** +
+__optional__|page|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 评论相关接口
+
+
+[[_selectcomment01usingget]]
+=== selectComment01
+....
+GET /CommentController/selectComment01
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**code** +
+__optional__|code|integer (int32)
+|**Query**|**userid** +
+__optional__|userid|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 评论相关接口
+
+
+[[_selectcomment02usingget]]
+=== 笔记id查询评论
+....
+GET /CommentController/selectComment02
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**code** +
+__required__|查找评论填1|integer (int32)
+|**Query**|**note_id** +
+__required__|笔记id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 评论相关接口
+
+
+[[_selectcomment03usingget]]
+=== selectComment03
+....
+GET /CommentController/selectComment03
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**commentid** +
+__optional__|commentid|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 评论相关接口
+
+
+[[_updatecommentusingget]]
+=== updateComment
+....
+GET /CommentController/updateComment
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^4"]
+|===
+|Type|Name|Schema
+|**Query**|**code** +
+__optional__|integer (int32)
+|**Query**|**collecnum** +
+__optional__|integer (int32)
+|**Query**|**commentid** +
+__optional__|integer (int32)
+|**Query**|**content** +
+__optional__|string
+|**Query**|**datatime** +
+__optional__|string
+|**Query**|**note_id** +
+__optional__|integer (int32)
+|**Query**|**u_id** +
+__optional__|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 评论相关接口
+
+
+[[_selectmajorusingget]]
+=== 查询所有专业
+....
+GET /MajorController/selectMajor
+....
+
+
+==== Description
+无需传参
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 专业相关接口
+
+
+[[_addmusicusingget]]
+=== addMusic
+....
+GET /MusicContorller/addMusic
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^4"]
+|===
+|Type|Name|Schema
+|**Query**|**m_id** +
+__optional__|integer (int32)
+|**Query**|**m_name** +
+__optional__|string
+|**Query**|**music** +
+__optional__|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 音乐相关接口
+
+
+[[_deletemusicusingget]]
+=== deleteMusic
+....
+GET /MusicContorller/deleteMusic
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**m_id** +
+__optional__|m_id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 音乐相关接口
+
+
+[[_selectmsicusingget]]
+=== selectMsic
+....
+GET /MusicContorller/selectMsic
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**keyword** +
+__optional__|keyword|string
+|**Query**|**limit** +
+__optional__|limit|integer (int32)
+|**Query**|**page** +
+__optional__|page|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 音乐相关接口
+
+
+[[_selectmsicinfousingget]]
+=== 查询所有音乐
+....
+GET /MusicContorller/selectMsicInfo
+....
+
+
+==== Description
+无需传参
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 音乐相关接口
+
+
+[[_addnoteusingget]]
+=== 发布笔记
+....
+GET /NoteController/addNote
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**collecid** +
+__optional__||integer (int32)
+|**Query**|**collecnum** +
+__optional__||integer (int32)
+|**Query**|**comnum** +
+__optional__||integer (int32)
+|**Query**|**contentinfo** +
+__optional__|笔记内容|string
+|**Query**|**datatime** +
+__optional__||string
+|**Query**|**id** +
+__optional__||integer (int32)
+|**Query**|**majorid** +
+__required__|专业id|integer (int32)
+|**Query**|**recommendid** +
+__optional__||integer (int32)
+|**Query**|**subjectid** +
+__required__|学科id|integer (int32)
+|**Query**|**title** +
+__optional__|笔记标题|string
+|**Query**|**userid** +
+__optional__|用户id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 笔记相关接口
+
+
+[[_deletenoteusingget]]
+=== deleteNote
+....
+GET /NoteController/deleteNote
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**id** +
+__optional__|id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 笔记相关接口
+
+
+[[_selectnoteusingget]]
+=== selectNote
+....
+GET /NoteController/selectNote
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**keyword** +
+__optional__|keyword|string
+|**Query**|**limit** +
+__optional__|limit|integer (int32)
+|**Query**|**page** +
+__optional__|page|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 笔记相关接口
+
+
+[[_selectnoteidusingget]]
+=== 查询我的笔记/用户id查笔记
+....
+GET /NoteController/selectNoteId
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**userid** +
+__required__|用户id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 笔记相关接口
+
+
+[[_selectnoteidcollusingget]]
+=== 查询我的收藏笔记/用户查收藏笔记
+....
+GET /NoteController/selectNoteIdColl
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**collecid** +
+__required__|用户收藏id 填1|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 笔记相关接口
+
+
+[[_selectnotemajorusingget]]
+=== 查询学科笔记
+....
+GET /NoteController/selectNoteMajor
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**limit** +
+__required__|每页条数|integer (int32)
+|**Query**|**page** +
+__required__|页数|integer (int32)
+|**Query**|**subjectid** +
+__required__|学科id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 笔记相关接口
+
+
+[[_selectnotetuijusingget]]
+=== 查询推荐笔记
+....
+GET /NoteController/selectNoteTuiJ
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**limit** +
+__required__|每页条数|integer (int32)
+|**Query**|**page** +
+__required__|页数|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 笔记相关接口
+
+
+[[_updatenoteusingget]]
+=== updateNote
+....
+GET /NoteController/updateNote
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^4"]
+|===
+|Type|Name|Schema
+|**Query**|**collecid** +
+__optional__|integer (int32)
+|**Query**|**collecnum** +
+__optional__|integer (int32)
+|**Query**|**comnum** +
+__optional__|integer (int32)
+|**Query**|**contentinfo** +
+__optional__|string
+|**Query**|**datatime** +
+__optional__|string
+|**Query**|**id** +
+__optional__|integer (int32)
+|**Query**|**majorid** +
+__optional__|integer (int32)
+|**Query**|**recommendid** +
+__optional__|integer (int32)
+|**Query**|**subjectid** +
+__optional__|integer (int32)
+|**Query**|**title** +
+__optional__|string
+|**Query**|**userid** +
+__optional__|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 笔记相关接口
+
+
+[[_adduserusingget]]
+=== 添加用户
+....
+GET /UserController/adduser
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**birthday** +
+__optional__|用户生日|string
+|**Query**|**collecnber** +
+__optional__|用户收藏数|integer (int32)
+|**Query**|**introduce** +
+__optional__|用户个人介绍|string
+|**Query**|**name** +
+__required__|用户昵称|string
+|**Query**|**notenber** +
+__optional__|用户笔记数|integer (int32)
+|**Query**|**sex** +
+__optional__|用户性别|string
+|**Query**|**u_id** +
+__optional__||integer (int32)
+|**Query**|**vx_head** +
+__required__|用户头像链接|string
+|**Query**|**vx_id** +
+__required__|用户openid唯一标识|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理相关接口
+
+
+[[_deleteuserusingget]]
+=== 删除用户
+....
+GET /UserController/deleteUser
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**u_id** +
+__required__|删除用户的id|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理相关接口
+
+
+[[_voucherusingget]]
+=== 获取上传凭证
+....
+GET /UserController/getVoucher
+....
+
+
+==== Description
+无需传参
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理相关接口
+
+
+[[_loginusingpost]]
+=== login
+....
+POST /UserController/login
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^4"]
+|===
+|Type|Name|Schema
+|**Query**|**creationTime** +
+__optional__|integer (int64)
+|**Query**|**id** +
+__optional__|integer (int32)
+|**Query**|**id** +
+__optional__|string
+|**Query**|**lastAccessedTime** +
+__optional__|integer (int64)
+|**Query**|**maxInactiveInterval** +
+__optional__|integer (int32)
+|**Query**|**new** +
+__optional__|boolean
+|**Query**|**password** +
+__optional__|string
+|**Query**|**servletContext.classLoader** +
+__optional__|ref
+|**Query**|**servletContext.contextPath** +
+__optional__|string
+|**Query**|**servletContext.defaultSessionTrackingModes** +
+__optional__|< enum (COOKIE, URL, SSL) > array(multi)
+|**Query**|**servletContext.effectiveMajorVersion** +
+__optional__|integer (int32)
+|**Query**|**servletContext.effectiveMinorVersion** +
+__optional__|integer (int32)
+|**Query**|**servletContext.effectiveSessionTrackingModes** +
+__optional__|< enum (COOKIE, URL, SSL) > array(multi)
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].buffer** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].defaultContentType** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].deferredSyntaxAllowedAsLiteral** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].elIgnored** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].errorOnUndeclaredNamespace** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].includeCodas** +
+__optional__|< string > array(multi)
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].includePreludes** +
+__optional__|< string > array(multi)
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].isXml** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].pageEncoding** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].scriptingInvalid** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].trimDirectiveWhitespaces** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].urlPatterns** +
+__optional__|< string > array(multi)
+|**Query**|**servletContext.jspConfigDescriptor.taglibs[0].taglibLocation** +
+__optional__|string
+|**Query**|**servletContext.jspConfigDescriptor.taglibs[0].taglibURI** +
+__optional__|string
+|**Query**|**servletContext.majorVersion** +
+__optional__|integer (int32)
+|**Query**|**servletContext.minorVersion** +
+__optional__|integer (int32)
+|**Query**|**servletContext.requestCharacterEncoding** +
+__optional__|string
+|**Query**|**servletContext.responseCharacterEncoding** +
+__optional__|string
+|**Query**|**servletContext.serverInfo** +
+__optional__|string
+|**Query**|**servletContext.servletContextName** +
+__optional__|string
+|**Query**|**servletContext.sessionCookieConfig.comment** +
+__optional__|string
+|**Query**|**servletContext.sessionCookieConfig.domain** +
+__optional__|string
+|**Query**|**servletContext.sessionCookieConfig.httpOnly** +
+__optional__|boolean
+|**Query**|**servletContext.sessionCookieConfig.maxAge** +
+__optional__|integer (int32)
+|**Query**|**servletContext.sessionCookieConfig.name** +
+__optional__|string
+|**Query**|**servletContext.sessionCookieConfig.path** +
+__optional__|string
+|**Query**|**servletContext.sessionCookieConfig.secure** +
+__optional__|boolean
+|**Query**|**servletContext.sessionTimeout** +
+__optional__|integer (int32)
+|**Query**|**servletContext.virtualServerName** +
+__optional__|string
+|**Query**|**username** +
+__optional__|string
+|**Query**|**valueNames** +
+__optional__|< string > array(multi)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理相关接口
+
+
+[[_selectuserusingget]]
+=== selectUser
+....
+GET /UserController/selectUser
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**limit** +
+__optional__|limit|integer (int32)
+|**Query**|**page** +
+__optional__|page|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理相关接口
+
+
+[[_selectuservxusingget]]
+=== 通过vx_id查询用户
+....
+GET /UserController/selectUserVx
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**vx_id** +
+__required__|用户openid唯一标识|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理相关接口
+
+
+[[_selectwhereuserusingget]]
+=== selectWhereUser
+....
+GET /UserController/selectWhereUser
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**keyword** +
+__optional__|keyword|string
+|**Query**|**limit** +
+__optional__|limit|integer (int32)
+|**Query**|**page** +
+__optional__|page|integer (int32)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理相关接口
+
+
+[[_sessionusingpost]]
+=== session
+....
+POST /UserController/session
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**creationTime** +
+__optional__||integer (int64)
+|**Query**|**id** +
+__optional__||string
+|**Query**|**key** +
+__optional__|key|string
+|**Query**|**lastAccessedTime** +
+__optional__||integer (int64)
+|**Query**|**maxInactiveInterval** +
+__optional__||integer (int32)
+|**Query**|**new** +
+__optional__||boolean
+|**Query**|**servletContext.classLoader** +
+__optional__||ref
+|**Query**|**servletContext.contextPath** +
+__optional__||string
+|**Query**|**servletContext.defaultSessionTrackingModes** +
+__optional__||< enum (COOKIE, URL, SSL) > array(multi)
+|**Query**|**servletContext.effectiveMajorVersion** +
+__optional__||integer (int32)
+|**Query**|**servletContext.effectiveMinorVersion** +
+__optional__||integer (int32)
+|**Query**|**servletContext.effectiveSessionTrackingModes** +
+__optional__||< enum (COOKIE, URL, SSL) > array(multi)
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].buffer** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].defaultContentType** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].deferredSyntaxAllowedAsLiteral** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].elIgnored** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].errorOnUndeclaredNamespace** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].includeCodas** +
+__optional__||< string > array(multi)
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].includePreludes** +
+__optional__||< string > array(multi)
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].isXml** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].pageEncoding** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].scriptingInvalid** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].trimDirectiveWhitespaces** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.jspPropertyGroups[0].urlPatterns** +
+__optional__||< string > array(multi)
+|**Query**|**servletContext.jspConfigDescriptor.taglibs[0].taglibLocation** +
+__optional__||string
+|**Query**|**servletContext.jspConfigDescriptor.taglibs[0].taglibURI** +
+__optional__||string
+|**Query**|**servletContext.majorVersion** +
+__optional__||integer (int32)
+|**Query**|**servletContext.minorVersion** +
+__optional__||integer (int32)
+|**Query**|**servletContext.requestCharacterEncoding** +
+__optional__||string
+|**Query**|**servletContext.responseCharacterEncoding** +
+__optional__||string
+|**Query**|**servletContext.serverInfo** +
+__optional__||string
+|**Query**|**servletContext.servletContextName** +
+__optional__||string
+|**Query**|**servletContext.sessionCookieConfig.comment** +
+__optional__||string
+|**Query**|**servletContext.sessionCookieConfig.domain** +
+__optional__||string
+|**Query**|**servletContext.sessionCookieConfig.httpOnly** +
+__optional__||boolean
+|**Query**|**servletContext.sessionCookieConfig.maxAge** +
+__optional__||integer (int32)
+|**Query**|**servletContext.sessionCookieConfig.name** +
+__optional__||string
+|**Query**|**servletContext.sessionCookieConfig.path** +
+__optional__||string
+|**Query**|**servletContext.sessionCookieConfig.secure** +
+__optional__||boolean
+|**Query**|**servletContext.sessionTimeout** +
+__optional__||integer (int32)
+|**Query**|**servletContext.virtualServerName** +
+__optional__||string
+|**Query**|**valueNames** +
+__optional__||< string > array(multi)
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|object
+|**201**|Created|No Content
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Consumes
+
+* `application/json`
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理相关接口
+
+
+[[_updateuserusingget]]
+=== 更改用户
+....
+GET /UserController/updateUser
+....
+
+
+==== Parameters
+
+[options="header", cols=".^2,.^3,.^9,.^4"]
+|===
+|Type|Name|Description|Schema
+|**Query**|**birthday** +
+__optional__|用户生日|string
+|**Query**|**collecnber** +
+__optional__|用户收藏数|integer (int32)
+|**Query**|**introduce** +
+__optional__|用户个人介绍|string
+|**Query**|**name** +
+__optional__|用户昵称|string
+|**Query**|**notenber** +
+__optional__|用户笔记数|integer (int32)
+|**Query**|**sex** +
+__optional__|用户性别|string
+|**Query**|**u_id** +
+__required__|修改用户的id|integer (int32)
+|**Query**|**vx_head** +
+__optional__|用户头像链接|string
+|**Query**|**vx_id** +
+__optional__|用户openid唯一标识|string
+|===
+
+
+==== Responses
+
+[options="header", cols=".^2,.^14,.^4"]
+|===
+|HTTP Code|Description|Schema
+|**200**|OK|<<_json,JSON>>
+|**401**|Unauthorized|No Content
+|**403**|Forbidden|No Content
+|**404**|Not Found|No Content
+|===
+
+
+==== Produces
+
+* `*/*`
+
+
+==== Tags
+
+* 用户管理相关接口
+
+
+

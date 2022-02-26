@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shandu.mapper.MajorMapper">
+    <!--    查看专业-->
+    <select id="selectMajor" resultType="com.shandu.pojo.Major">
+        select *
+        from shandu.major
+    </select>
+
+    <!--    //    查询专业-->
+    <select id="selectMajor01" resultType="com.shandu.pojo.Major">
+        select *
+        from shandu.major
+        <where>
+            <if test="keyword!= null">
+                and concat_ws(" ", majorinfo) regexp #{keyword}
+            </if>
+        </where>
+        limit #{page},#{limit}
+    </select>
+    <!--    添加专业-->
+    <insert id="addMajor" parameterType="com.shandu.pojo.Major">
+        insert into shandu.major (majorinfo)
+        values (#{majorinfo})
+    </insert>
+<!--    修改专业-->
+    <update id="updateMajor" parameterType="com.shandu.pojo.Major">
+        update shandu.major
+        set majorinfo = #{majorinfo}
+        where majorid = #{majorid}
+    </update>
+<!--    删除专业-->
+    <delete id="deleteMajor" parameterType="com.shandu.pojo.Major">
+        delete
+        from shandu.major
+        where majorid = #{majorid}
+    </delete>
+</mapper>

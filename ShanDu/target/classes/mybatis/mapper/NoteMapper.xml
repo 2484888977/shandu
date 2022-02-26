@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shandu.mapper.NoteMapper">
+    <!--    添加笔记-->
+    <insert id="addNote" parameterType="com.shandu.pojo.Note">
+        insert into shandu.note(majorid, userid, comnum, title, contentinfo, collecnum, collecid, datatime, recommendid,
+                                subjectid)
+        values (#{majorid}, #{userid}, #{comnum}, #{title}, #{contentinfo}, #{collecnum}, #{collecid}, #{datatime},
+                #{recommendid}, #{subjectid})
+    </insert>
+    <!--    //    查询笔记-->
+    <select id="selectNote" resultType="com.shandu.pojo.Note_View">
+        select *
+        from shandu.note_view
+        <where>
+            <if test="keyword!= null">
+                and concat_ws(" ", name,title,majorinfo) regexp #{keyword}
+            </if>
+        </where>
+        limit #{page},#{limit}
+    </select>
+    <!--    //    查询对应专业学科笔记-->
+    <select id="selectNoteMajor" resultType="com.shandu.pojo.Note_View">
+        select *
+        from shandu.note_view
+        where subjectid = #{subjectid}
+        limit #{page},#{limit}
+    </select>
+    <!--    //    查询推荐笔记-->
+    <select id="selectNoteTuiJ" resultType="com.shandu.pojo.Note_View">
+        select *
+        from shandu.note_view
+        <where>
+            <if test="true">
+                recommendid = 1
+            </if>
+            <if test="keyword!= null">
+                and concat_ws(" ", name,title,majorinfo) regexp #{keyword}
+            </if>
+        </where>
+        limit #{page},#{limit}
+    </select>
+    <!--    笔记变推荐笔记/推荐笔记变笔记-->
+    <update id="updateNote01" parameterType="com.shandu.pojo.Note">
+        update shandu.note
+        set recommendid = #{recommendid}
+        where id = #{id}
+    </update>
+    <!--    //    用户id查询笔记-->
+    <select id="selectNoteId" resultType="com.shandu.pojo.Note_View">
+        select *
+        from shandu.note_view
+        where userid = #{userid}
+    </select>
+    <!--    //    笔记id查询笔记-->
+    <select id="selectNoteNId" resultType="com.shandu.pojo.Note_View">
+        select *
+        from shandu.note_view
+        where id = #{id}
+    </select>
+    <!--    //    用户查询收藏笔记-->
+    <select id="selectNoteIdColl" resultType="com.shandu.pojo.Note_View">
+        select *
+        from shandu.note_view
+        where collecid = #{collecid}
+    </select>
+    <!--    更改笔记-->
+    <update id="updateNote" parameterType="com.shandu.pojo.Note">
+        update shandu.note
+        set title       = #{title},
+            contentinfo = #{contentinfo},
+            majorid     = #{majorid}
+        where id = #{id}
+    </update>
+    <!--    //添加评论，评论数+1-->
+    <update id="updateNote02" parameterType="com.shandu.pojo.Note">
+        update shandu.note
+        set comnum = #{comnum}
+        where id = #{id}
+    </update>
+    <!--   收藏笔记 -->
+    <update id="collecNote" parameterType="com.shandu.pojo.Note">
+        update shandu.note
+        set collecid  = #{collecid},
+            collecnum = #{collecnum}
+        where id = #{id}
+    </update>
+    <!--    删除笔记-->
+    <delete id="deleteNote" parameterType="com.shandu.pojo.Note">
+        delete
+        from shandu.note
+        where id = #{id}
+    </delete>
+</mapper>

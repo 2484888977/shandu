@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shandu.mapper.MusicMapper">
+<!--    查询音乐-->
+    <select id="selectMusic" resultType="com.shandu.pojo.Music">
+        select *
+        from shandu.music
+        <where>
+            <if test="keyword!= null">
+                and concat_ws(" ", m_name) regexp #{keyword}
+            </if>
+        </where>
+        limit #{page},#{limit}
+    </select>
+<!--    删除音乐-->
+    <delete id="deleteMusic" parameterType="com.shandu.pojo.Music">
+        delete
+        from shandu.music
+        where m_id = #{m_id}
+    </delete>
+<!--    添加音乐-->
+    <insert id="addMusic" parameterType="com.shandu.pojo.Music">
+        insert into shandu.music(m_name, music)
+        values (#{m_name}, #{music})
+    </insert>
+
+
+</mapper>
